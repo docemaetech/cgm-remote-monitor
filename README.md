@@ -740,3 +740,18 @@ License
 
     You should have received a copy of the GNU Affero General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    fly.tomlfly.toml.gitignorefly apps createfly.toml
+    fly.toml.gitignore
+    github/workflows/main.ymlmkdir -p .github/workflows
+    name: Fly Deploy
+    on: [push]
+    env:
+    FLY_API_TOKEN: ${{ lPYQ5cfUUsOrmWj39vtI64KztVy70urnF7mtVpAQDYw }}
+    jobs:
+  deploy:
+      name: Deploy app
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+         - uses: superfly/flyctl-actions/setup-flyctl@master
+        - run: "deploy"
